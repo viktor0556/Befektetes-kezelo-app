@@ -10,6 +10,12 @@ function Navbar () {
         <li>
           <Link to="/portfolio" className="hover:text-gray-300 transition">Portfólió</Link>
         </li>
+        <li>
+          <Link to="/Concept-finder" className="hover:text-gray-300 transition">Fogalmak</Link>
+        </li>
+        <li>
+          <Link to="/Stock-price" className="hover:text-gray-300 transition">Részvény árfolyam</Link>
+        </li>
       </ul>
     </nav>
   );

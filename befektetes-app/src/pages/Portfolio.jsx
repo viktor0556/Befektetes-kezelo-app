@@ -1,5 +1,4 @@
 import AddInvestment from "../components/AddInvestment";
-import StockPrice from "../components/StockPrice";
 
 function Portfolio() {
   return (
@@ -7,7 +6,6 @@ function Portfolio() {
       <h1 className="text-2xl font-bold">Portfólió</h1>
       <p>Itt látod majd az összes befektetésedet.</p>
       <AddInvestment/>
-      <StockPrice/>
     </div>
   );
 }
