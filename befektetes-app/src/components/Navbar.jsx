@@ -16,6 +16,9 @@ function Navbar () {
         <li>
           <Link to="/Stock-price" className="hover:text-gray-300 transition">Részvény árfolyam</Link>
         </li>
+        <li>
+          <Link to="/Indicator-calculations" className="hover:text-gray-300 transition">Mutató Számítás</Link>
+        </li>
       </ul>
     </nav>
   );
