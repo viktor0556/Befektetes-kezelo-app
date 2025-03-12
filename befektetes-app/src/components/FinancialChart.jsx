@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import {
   Line,
   LineChart,
@@ -15,56 +15,151 @@ import useInvestments from "./UseInvestment";
 import AddInvestmentForm from "./AddInvestment";
 
 const FinancialChart = () => {
-  const { investments } = useInvestments();
-
-  useEffect(() => {}, [investments]);
+  const [showAmount, setShowAmount] = useState(true);
+  const [showPb, setShowPb] = useState(true);
+  const [showPs, setShowPs] = useState(true);
+  const [showPe, setShowPe] = useState(true);
+  const [showPeg, setShowPeg] = useState(true);
+  const [showDy, setShowDy] = useState(true);
+  const [showDte, setShowDte] = useState(true);
+  const [showEv, setShowEv] = useState(true);
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold">Portfólió</h1>
-      <p>Itt látod majd az összes befektetésedet.</p>
-      <p className="mb-4">
-        <strong>Használati útmutató a grafikonhoz:</strong> A grafikon segít összehasonlítani a
-        befektetéseidet a P/B és P/S mutatók alapján. Ha egy részvény mutatói
-        túl magasak (például P/B 10 felett vagy P/S 10 felett), lehet, hogy
-        túlárazott. Ha alacsonyak (például P/B 1 alatt), akkor lehet
-        alulértékelt, és érdemes lehet vásárolni belőle. Az összeg vonal pedig
-        segít látni, hogy hol van nagyobb kockázat a portfóliódban.
+    <div className="container mx-auto px-6 py-8">
+      <h2 className="text-3xl font-semibold mb-2">Befektetési portfólió</h2>
+      <p className="text-gray-600 mb-4">
+        Itt láthatod az összes befektetésed grafikus ábrázolását.
       </p>
-      <AddInvestmentForm />
 
-      {investments.length > 0 && (
-        <ResponsiveContainer width="100%" height={300}>
-          <LineChart
-            data={investments}
-            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-          >
+      <div className="bg-gray-100 p-4 rounded-lg shadow mb-6">
+        <h3 className="font-semibold text-lg mb-2">
+          Használati útmutató a grafikonhoz:
+        </h3>
+        <p className="text-sm text-gray-700">
+          A grafikon segít összehasonlítani a befektetéseidet. Ha egy részvény{" "}
+          <strong>alacsony P/B értékkel (1 alatt)</strong> rendelkezik,
+          alulértékelt lehet, míg a <strong>magas értékek</strong> kockázatos
+          befektetést jelezhetnek. Az <strong>összeg vonal</strong> megmutatja,
+          hogy hol összpontosul nagyobb tőke a portfóliódban.
+        </p>
+        <div className="mb-6">
+          <AddInvestmentForm />
+        </div>
+        <div className="mb-4 bg-gray-100 p-4 rounded-lg shadow-md flex flex-wrap justify-center gap-4">
+          <span className="font-semibold text-gray-700 mr-4">Mutatók:</span>
+
+          <label className="inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              checked={showAmount}
+              onChange={() => setShowAmount(!showAmount)}
+              className="form-checkbox h-5 w-5 text-indigo-600"
+            />
+            <span className="ml-2 text-gray-600">Összeg</span>
+          </label>
+
+          <label className="inline-flex items-center ml-4 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={showPb}
+              onChange={() => setShowPb(!showPb)}
+              className="form-checkbox"
+            />
+            <span className="ml-2">P/B mutató</span>
+          </label>
+
+          <label className="inline-flex items-center cursor-pointer ml-4">
+            <input
+              type="checkbox"
+              checked={showPs}
+              onChange={() => setShowPs(!showPs)}
+              className="form-checkbox"
+            />
+            <span className="ml-2">P/S mutató</span>
+          </label>
+
+          <label className="inline-flex items-center cursor-pointer ml-4">
+            <input
+              type="checkbox"
+              checked={showPe}
+              onChange={() => setShowPe(!showPe)}
+              className="form-checkbox"
+            />
+            <span className="ml-2">P/E mutató</span>
+          </label>
+
+          <label className="inline-flex items-center cursor-pointer ml-4">
+            <input
+              type="checkbox"
+              checked={showPeg}
+              onChange={() => setShowPeg(!showPeg)}
+              className="form-checkbox"
+            />
+            <span className="ml-2">PEG Ratio</span>
+          </label>
+
+          <label className="inline-flex items-center cursor-pointer ml-4">
+            <input
+              type="checkbox"
+              checked={showDy}
+              onChange={() => setShowDy(!showDy)}
+              className="form-checkbox"
+            />
+            <span className="ml-2">Dividend Yield</span>
+          </label>
+
+          <label className="inline-flex items-center cursor-pointer ml-4">
+            <input
+              type="checkbox"
+              checked={showDte}
+              onChange={() => setShowDte(!showDte)}
+              className="form-checkbox"
+            />
+            <span className="ml-2">Debt-to-Equity</span>
+          </label>
+        </div>
+        <ResponsiveContainer width="100%" height={400}>
+          <LineChart data={useInvestments().investments}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line
-              type="natural"
-              dataKey="amount"
-              stroke="#8884d8"
-              name="Összeg (Ft)"
-            />
-            <Line
-              type="natural"
-              dataKey="pb"
-              stroke="#82ca9d"
-              name="P/B érték"
-            />
-            <Line
-              type="natural"
-              dataKey="ps"
-              stroke="#ffc658"
-              name="P/S érték"
-            />
+
+            {showAmount && (
+              <Line name="Összeg (Ft)" dataKey="amount" stroke="#8884d8" />
+            )}
+            {showPb && <Line name="P/B mutató" dataKey="pb" stroke="#82ca9d" />}
+            {showPs && <Line name="P/S mutató" dataKey="ps" stroke="#ffc658" />}
+            {showPe && <Line name="P/E mutató" dataKey="pe" stroke="#8884d8" />}
+            {showPeg && (
+              <Line name="PEG Ratio" dataKey="peg" stroke="#82ca9d" />
+            )}
+            {showDy && (
+              <Line name="Dividend Yield" dataKey="dy" stroke="#ffc658" />
+            )}
+            {showDte && (
+              <Line name="Debt-to-Equity" dataKey="dte" stroke="#8884d8" />
+            )}
+            {showEv && <Line name="EV/EBITDA" dataKey="ev" stroke="#82ca9d" />}
           </LineChart>
         </ResponsiveContainer>
-      )}
+        <div className="mt-6 p-4 bg-white rounded-xl shadow">
+          <h4 className="text-lg font-semibold mb-2">
+            Használati útmutató a grafikonhoz
+          </h4>
+          <ul className="list-disc pl-4 text-gray-700">
+            <li>A grafikon interaktívan mutatja a befektetések változását.</li>
+            <li>
+              Használd a vonalat az egyes befektetések kockázatának gyors
+              áttekintéséhez.
+            </li>
+            <li>
+              A befektetéseket rendszeresen frissítsd az aktuális adatokkal.
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

@@ -9,6 +9,16 @@ const InvestmentForm = ({
   onPbChange,
   investmentPS,
   onPsChange,
+  investmentPE,
+  onPeChange,
+  investmentPEG,
+  onPegChange,
+  investmentDY,
+  onDyChange,
+  investmentDTE,
+  onDteChange,
+  investmentEV,
+  onEvChange,
   onSave,
 }) => {
   return (
@@ -74,6 +84,81 @@ const InvestmentForm = ({
             type="number"
             value={investmentPS}
             onChange={onPsChange}
+            className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="investmentPE"
+            className="block text-gray-700 font-medium mb-1"
+          >
+            PE:
+          </label>
+          <input
+            id="investmentPE"
+            type="number"
+            value={investmentPE}
+            onChange={onPeChange}
+            className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="investmentPEG"
+            className="block text-gray-700 font-medium mb-1"
+          >
+            PEG Ratio:
+          </label>
+          <input
+            id="investmentPEG"
+            type="number"
+            value={investmentPEG}
+            onChange={onPegChange}
+            className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="investmentDY"
+            className="block text-gray-700 font-medium mb-1"
+          >
+            Dividend Yield (Osztalékhozam):
+          </label>
+          <input
+            id="investmentDY"
+            type="number"
+            value={investmentDY}
+            onChange={onDyChange}
+            className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="investmentDTE"
+            className="block text-gray-700 font-medium mb-1"
+          >
+            Debt-to-Equity Ratio (adósság/saját tőke arány):
+          </label>
+          <input
+            id="investmentDTE"
+            type="number"
+            value={investmentDTE}
+            onChange={onDteChange}
+            className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="investmentEV"
+            className="block text-gray-700 font-medium mb-1"
+          >
+            EV/EBITDA:
+          </label>
+          <input
+            id="investmentEV"
+            type="number"
+            value={investmentEV}
+            onChange={onEvChange}
             className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
           />
         </div>

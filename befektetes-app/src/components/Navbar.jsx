@@ -19,6 +19,9 @@ function Navbar () {
         <li>
           <Link to="/Indicator-calculations" className="hover:text-gray-300 transition">Mutató Számítás</Link>
         </li>
+        <li>
+          <Link to="/economic-news" className="hover:text-gray-300 transition">Gazdasági hírek</Link>
+        </li>
       </ul>
     </nav>
   );

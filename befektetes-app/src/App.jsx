@@ -6,6 +6,7 @@ import './index.css'
 import ConceptFinder from "./pages/ConceptFinder";
 import StockPrice from './components/StockPrice'
 import IndicatorCalculations from "./pages/IndicatorCalculations";
+import EconomicNews from "./components/EconomicNews";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/Concept-finder" element={<ConceptFinder />} />
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="economic-news" element={<EconomicNews />}/>
       </Routes>
     </Router>
   );
