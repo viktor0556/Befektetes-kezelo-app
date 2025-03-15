@@ -117,6 +117,16 @@ const FinancialChart = () => {
             />
             <span className="ml-2">Debt-to-Equity</span>
           </label>
+
+          <label className="inline-flex items-center cursor-pointer ml-4">
+            <input
+              type="checkbox"
+              checked={showEv}
+              onChange={() => setShowEv(!showEv)}
+              className="form-checkbox"
+            />
+            <span className="ml-2">Debt-to-Equity</span>
+          </label>
         </div>
         <ResponsiveContainer width="100%" height={400}>
           <LineChart data={useInvestments().investments}>

@@ -149,23 +149,10 @@ const terms = [
         "Az árak általános és tartós emelkedése, ami a pénz értékének csökkenéséhez vezet.",
       related: ["Kamatemelés", "Stagfláció"],
     },
-    "ROE (Return on Equity)": {
-      description:
-        "Egy cég saját tőkéjének hatékonyságát mutatja meg, azaz mennyire hatékonyan használja fel a részvényesek pénzét.",
-      related: [
-        "EPS (egy részvényre jutó nyereség)",
-        "ROI (Return on Investment)",
-      ],
-    },
     "Befektetés-politika": {
       description:
         "Egy vállalat irányelve, amely meghatározza, milyen stratégiát követ a befektetések kezelésében.",
       related: ["Osztalékfizetés", "Kötvények"],
-    },
-    "Day trading": {
-      description:
-        "Értékpapírok napon belüli kereskedése, amelynek során rövid távú árfolyammozgásokat használnak ki.",
-      related: ["Volatilitás", "Tőzsdei stratégiák"],
     },
     "Long pozíció": {
       description:
@@ -204,11 +191,6 @@ const terms = [
       description:
         "Sok befektető pénzét összegyűjtve, egy profi alapkezelő irányításával diverzifikált befektetési portfólióba fektető pénzügyi eszközök.",
       related: ["ETF", "Portfólió diverzifikáció", "Long pozíció"],
-    },
-    "OTC (Over the Counter) piac": {
-      description:
-        "Tőzsdén kívüli piac, ahol közvetlenül két fél között történik a kereskedés, gyakran kevésbé szabályozott, mint a hagyományos tőzsde.",
-      related: ["Derivatívák", "Opciók", "Forward, Future szerződések"],
     },
     "Margin Trading": {
       description:

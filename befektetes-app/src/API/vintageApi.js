@@ -1,12 +1,10 @@
-const API_KEY_ = import.meta.env.API_KEY;
+const API_KEY_ = import.meta.env.VITE_API_KEY;
 
-const fetchStockData = async () => {
-
+const fetchStockData = async (searchTerm) => {
   const url = 
-  `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=${API_KEY_}`;
+  `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${searchTerm}&interval=5min&entitlement=delayed&apikey=${API_KEY_}`;
 
   try {
-    // We get the data from the API
     const response = await fetch(url);
     if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
@@ -16,10 +14,13 @@ const fetchStockData = async () => {
       throw new Error("API response structure is incorrect");
     }
 
-    const latestTime = Object.keys(data["Time Series (5min)"])[0];
-    const latestData = data["Time Series (5min)"][latestTime];
+    const timeSeries = data["Time Series (5min)"];
+    const chartData = Object.keys(timeSeries).map((time) => ({
+      time,
+      price: parseFloat(timeSeries[time]["4. close"]),
+    })).slice(0, 10).reverse();
 
-    return { latestTime, latestData };
+    return { chartData };
   } catch (error) {
     console.error("Error fetching data:", error.message);
     throw error; 

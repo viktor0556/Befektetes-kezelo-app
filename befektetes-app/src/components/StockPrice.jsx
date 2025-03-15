@@ -1,36 +1,41 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import fetchStockData from "../API/vintageApi";
+import StockSearch from "./StockSearch"; 
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 const StockPrice = () => {
-  const [stockData, setStockData] = useState(null); // We store the exchange rates
+  const [stockData, setStockData] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const getData = async () => {
-      const data = await fetchStockData();
-      if (data) {
-        setStockData(data); // If there is data, we will save it
-      }
-    };
-    getData();
-  }, []); // Runs once when the page loads
+  const handleSearch = async (symbol) => {
+    setLoading(true);
+    const data = await fetchStockData(symbol);
+    setStockData(data);
+    setLoading(false);
+  };
 
   return (
-    <div>
-      <h2>IBM Részvény Árfolyam</h2>
-      {stockData ? (
-        <ul>
-          <li>Utolsó frissítés: {stockData?.latestTime || "N/A"}</li>
-          <li>Nyitó ár: {stockData?.latestData?.["1. open"] || "N/A"} USD</li>
-          <li>Záró ár: {stockData?.latestData?.["4. close"] || "N/A"} USD</li>
-          <li>
-            Legmagasabb ár: {stockData?.latestData?.["2. high"] || "N/A"} USD
-          </li>
-          <li>
-            Legalacsonyabb ár: {stockData?.latestData?.["3. low"] || "N/A"} USD
-          </li>
-        </ul>
+    <div className="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+      <h1 className="text-2xl font-bold mb-4">Részvény árfolyamok 📈</h1>
+
+      <StockSearch onSelect={handleSearch} />
+
+      {loading ? (
+        <p className="text-center text-gray-500">Betöltés...</p>
+      ) : stockData ? (
+        <div className="bg-gray-100 p-4 rounded-lg shadow">
+          <h2 className="text-xl font-semibold">Árfolyamdiagram</h2>
+          <ResponsiveContainer width="100%" height={300}>
+            <LineChart data={stockData.chartData}>
+              <XAxis dataKey="time" hide />
+              <YAxis domain={['dataMin', 'dataMax']} />
+              <Tooltip />
+              <Line type="monotone" dataKey="price" stroke="#3182CE" strokeWidth={2} />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
       ) : (
-        <p>Adatok betöltése...</p>
+        <p className="text-gray-500 text-center">Nem található adat.</p>
       )}
     </div>
   );
