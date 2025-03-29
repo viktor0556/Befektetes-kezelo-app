@@ -1,4 +1,4 @@
-import terms from "../components/FinancialDictionary";
+import terms from "../components/news/FinancialDictionary";
 import React from "react";
 import { useState } from "react";
 
@@ -23,7 +23,6 @@ const ConceptFinder = () => {
 
       <h2 className="text-xl font-bold mb-3">Fogalmak</h2>
 
-      {/* List of search terms */}
       <ul className="space-y-3">
         {termEntries
           .filter(
@@ -31,7 +30,7 @@ const ConceptFinder = () => {
           )
           .map(([key, value], index) => (
             <li key={index} className="border-b pb-2">
-              {/* Terms name */}
+
               <p className="font-semibold text-blue-600">{key}</p>
               {/* Terms explanation */}
               <p className="text-gray-700">{value.description}</p>

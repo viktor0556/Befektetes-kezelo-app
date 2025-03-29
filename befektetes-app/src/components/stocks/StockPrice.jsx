@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import fetchStockData from "../API/vintageApi";
+import fetchStockData from "../../API/vintageApi";
 import StockSearch from "./StockSearch"; 
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 

@@ -12,7 +12,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import useInvestments from "./UseInvestment";
-import AddInvestmentForm from "./AddInvestment";
+import AddInvestmentForm from './AddInvestment'
 
 const FinancialChart = () => {
   const [showAmount, setShowAmount] = useState(true);

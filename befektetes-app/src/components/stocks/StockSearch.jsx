@@ -2,7 +2,7 @@ const API_KEY_ = import.meta.env.VITE_API_KEY;
 import React, { useState } from "react";
 
 const StockSearch = ({ onSelect }) => {
-  const [searchTerm, setSearchTerm] = useState("IBM");
+  const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [loading, setLoading] = useState(false);
 

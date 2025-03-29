@@ -1,4 +1,4 @@
-import FinancialChart from "../components/FinancialChart";
+import FinancialChart from "../components/forms/FinancialChart";
 
 function Portfolio() {
   

@@ -36,6 +36,7 @@ const InvestmentForm = ({
           </label>
           <input
             id="investmentName"
+            placeholder="Investment Name"
             type="text"
             value={investment}
             onChange={onNameChange}
@@ -51,6 +52,7 @@ const InvestmentForm = ({
           </label>
           <input
             id="investmentAmount"
+            placeholder="Investment Amount"
             type="number"
             value={investmentAmount}
             onChange={onAmountChange}
@@ -66,6 +68,7 @@ const InvestmentForm = ({
           </label>
           <input
             id="investmentPB"
+            placeholder="PB"
             type="number"
             value={investmentPB}
             onChange={onPbChange}
@@ -80,6 +83,7 @@ const InvestmentForm = ({
             PS:
           </label>
           <input
+          placeholder="PS"
             id="investmentPS"
             type="number"
             value={investmentPS}
@@ -95,6 +99,7 @@ const InvestmentForm = ({
             PE:
           </label>
           <input
+          placeholder="PE"
             id="investmentPE"
             type="number"
             value={investmentPE}
@@ -110,6 +115,7 @@ const InvestmentForm = ({
             PEG Ratio:
           </label>
           <input
+          placeholder="PEG Ratio"
             id="investmentPEG"
             type="number"
             value={investmentPEG}
@@ -125,6 +131,7 @@ const InvestmentForm = ({
             Dividend Yield (Osztalékhozam):
           </label>
           <input
+          placeholder="Divined Yield"
             id="investmentDY"
             type="number"
             value={investmentDY}
@@ -140,6 +147,7 @@ const InvestmentForm = ({
             Debt-to-Equity Ratio (adósság/saját tőke arány):
           </label>
           <input
+          placeholder="Debt to Equity"
             id="investmentDTE"
             type="number"
             value={investmentDTE}
@@ -155,6 +163,7 @@ const InvestmentForm = ({
             EV/EBITDA:
           </label>
           <input
+          placeholder="EV/EBITDA"
             id="investmentEV"
             type="number"
             value={investmentEV}
@@ -163,6 +172,7 @@ const InvestmentForm = ({
           />
         </div>
         <button
+          type="button"
           onClick={onSave}
           className="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
         >
