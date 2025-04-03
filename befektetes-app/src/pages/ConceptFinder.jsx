@@ -1,4 +1,4 @@
-import terms from "../components/news/FinancialDictionary";
+import terms from "../data/terms";
 import React from "react";
 import { useState } from "react";
 

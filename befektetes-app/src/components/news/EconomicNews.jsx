@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-
-const topics = [
-  { id: "jegybank", title: "Jegybanki politika" },
-  { id: "kamatemeles", title: "Kamatemelés" },
-  { id: "inflacio", title: "Infláció" },
-  { id: "tech", title: "Technológiai fejlődés" },
-  { id: "zold", title: "Technológiai változások: Zöld energia" },
-  { id: "hasznalat", title: "Hogyan használd ezeket az infókat?" },
-];
+import topics from "../../data/economicTopics";
 
 const EconomicNews = () => {
   const [selected, setSelected] = useState(null);
