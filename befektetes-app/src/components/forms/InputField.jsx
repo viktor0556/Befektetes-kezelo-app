@@ -8,13 +8,14 @@ import React from "react";
  * @param {string} error - hibaüzenet (ha van)
  */
 
-const InputField = ({ label, value, onChange, error}) => {
+const InputField = ({ label, placeholder, value, onChange, error}) => {
   return (
     <div className="mb-4">
       <label className="font-bold block mb-1">{label}</label>
       <input
       type="number"
       value={value}
+      placeholder={placeholder}
       onChange={onChange}
       className={`w-full p-2 border rounded-md focus:outline-none ${
         error

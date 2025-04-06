@@ -3,6 +3,7 @@ import indicatorDescriptions from "../data/indicatorDescriptions";
 import { calculateIndicator } from "../utils/calculateIndicator";
 import useIndicatorForm from "../hooks/useIndicatorForm";
 import InputField from "../components/forms/InputField";
+import FieldGroup from "../components/forms/FieldGroup";
 
 const IndicatorCalculations = () => {
   const [result, setResult] = useState(null);
@@ -63,16 +64,12 @@ const IndicatorCalculations = () => {
             </ul>
           </div>
 
-          {/* Input mezők */}
-          {needed.map((field) => (
-            <InputField
-              key={field}
-              label={field}
-              value={values[field]}
-              onChange={handleChange(field)}
-              error={errors[field]}
-            />
-          ))}
+          <FieldGroup 
+          fields={needed}
+          values={values}
+          errors={errors}
+          handleChange={handleChange}
+          />
 
           <button
             onClick={calculateResult}
