@@ -3,15 +3,13 @@ import {
   Line,
   LineChart,
   CartesianGrid,
-  BarChart,
-  Bar,
   XAxis,
   YAxis,
   Tooltip,
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import useInvestments from "./UseInvestment";
+import { useInvestments } from "../../context/InvestmentContext"
 import AddInvestmentForm from './AddInvestment'
 
 const FinancialChart = () => {
@@ -23,6 +21,8 @@ const FinancialChart = () => {
   const [showDy, setShowDy] = useState(true);
   const [showDte, setShowDte] = useState(true);
   const [showEv, setShowEv] = useState(true);
+
+  const { investments } = useInvestments();
 
   return (
     <div className="container mx-auto px-6 py-8">
@@ -129,7 +129,7 @@ const FinancialChart = () => {
           </label>
         </div>
         <ResponsiveContainer width="100%" height={400}>
-          <LineChart data={useInvestments().investments}>
+          <LineChart data={investments}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />

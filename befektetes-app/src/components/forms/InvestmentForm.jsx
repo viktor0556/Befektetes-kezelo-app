@@ -1,25 +1,7 @@
 import React from "react";
 
 const InvestmentForm = ({
-  investment,
-  investmentAmount,
-  onNameChange,
-  onAmountChange,
-  investmentPB,
-  onPbChange,
-  investmentPS,
-  onPsChange,
-  investmentPE,
-  onPeChange,
-  investmentPEG,
-  onPegChange,
-  investmentDY,
-  onDyChange,
-  investmentDTE,
-  onDteChange,
-  investmentEV,
-  onEvChange,
-  onSave,
+  values, onChange, onSave
 }) => {
   return (
     <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md mt-6">
@@ -38,8 +20,8 @@ const InvestmentForm = ({
             id="investmentName"
             placeholder="Investment Name"
             type="text"
-            value={investment}
-            onChange={onNameChange}
+            value={values.investment}
+            onChange={onChange("investment")}
             className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
           />
         </div>
@@ -54,8 +36,8 @@ const InvestmentForm = ({
             id="investmentAmount"
             placeholder="Investment Amount"
             type="number"
-            value={investmentAmount}
-            onChange={onAmountChange}
+            value={values.investmentAmount}
+            onChange={onChange("investmentAmount")}
             className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
           />
         </div>
@@ -70,8 +52,8 @@ const InvestmentForm = ({
             id="investmentPB"
             placeholder="PB"
             type="number"
-            value={investmentPB}
-            onChange={onPbChange}
+            value={values.pb}
+            onChange={onChange("pb")}
             className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
           />
         </div>
@@ -86,8 +68,8 @@ const InvestmentForm = ({
           placeholder="PS"
             id="investmentPS"
             type="number"
-            value={investmentPS}
-            onChange={onPsChange}
+            value={values.ps}
+            onChange={onChange("ps")}
             className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
           />
         </div>
@@ -102,8 +84,8 @@ const InvestmentForm = ({
           placeholder="PE"
             id="investmentPE"
             type="number"
-            value={investmentPE}
-            onChange={onPeChange}
+            value={values.pe}
+            onChange={onChange("pe")}
             className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
           />
         </div>
@@ -118,8 +100,8 @@ const InvestmentForm = ({
           placeholder="PEG Ratio"
             id="investmentPEG"
             type="number"
-            value={investmentPEG}
-            onChange={onPegChange}
+            value={values.peg}
+            onChange={onChange("peg")}
             className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
           />
         </div>
@@ -134,8 +116,8 @@ const InvestmentForm = ({
           placeholder="Divined Yield"
             id="investmentDY"
             type="number"
-            value={investmentDY}
-            onChange={onDyChange}
+            value={values.dy}
+            onChange={onChange("dy")}
             className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
           />
         </div>
@@ -150,8 +132,8 @@ const InvestmentForm = ({
           placeholder="Debt to Equity"
             id="investmentDTE"
             type="number"
-            value={investmentDTE}
-            onChange={onDteChange}
+            value={values.dte}
+            onChange={onChange("dte")}
             className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
           />
         </div>
@@ -166,8 +148,8 @@ const InvestmentForm = ({
           placeholder="EV/EBITDA"
             id="investmentEV"
             type="number"
-            value={investmentEV}
-            onChange={onEvChange}
+            value={values.ev}
+            onChange={onChange("ev")}
             className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
           />
         </div>

@@ -7,7 +7,7 @@ import {
 
 /**
  * Több input mezőt jelenít meg egy tömb alapján
- * @param {array} fields - a szükséges mezők (stringek tömbje)
+ * @param {array<string>} fields - a szükséges mezők (stringek tömbje)
  * @param {object} values - useState objektum
  * @param {object} errors - validációs hibák
  * @param {function} handleChange - változáskezelő

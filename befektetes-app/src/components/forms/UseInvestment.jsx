@@ -9,29 +9,19 @@ const useInvestments = () => {
     localStorage.setItem("investments", JSON.stringify(investments));
   }, [investments]);
 
-  const addInvestment = (
-    investment,
-    investmentAmount,
-    investmentPB,
-    investmentPS,
-    investmentPE,
-    investmentPEG,
-    investmentDY,
-    investmentDTE,
-    investmentEV
-  ) => {
-    if (investment !== "" && investmentAmount > 0) {
+  const addInvestment = (values) => {
+    if (values.investment !== "" && values.investmentAmount > 0) {
       const newInvestment = {
         date: new Date().toLocaleDateString(),
-        name: investment,
-        amount: investmentAmount,
-        pb: investmentPB,
-        ps: investmentPS,
-        pe: investmentPE,
-        peg: investmentPEG,
-        dy: investmentDY,
-        dte: investmentDTE,
-        ev: investmentEV,
+        name: values.investment,
+        amount: values.investmentAmount,
+        pb: values.pb,
+        ps: values.ps,
+        pe: values.pe,
+        peg: values.peg,
+        dy: values.dy,
+        dte: values.dte,
+        ev: values.ev,
       };
       setInvestments([...investments, newInvestment]);
     }
