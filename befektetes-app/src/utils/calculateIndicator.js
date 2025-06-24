@@ -1,40 +1,40 @@
 /**
- * Számításokat végző függvény minden mutatóhoz
- * @param {string} type - a kiválasztott mutató neve
- * @param {object} inputs - az összes lehetséges input, kulcs-érték párokban
- * @param {number|null} - a kiszámolt érték vagy null
+ * Calculation function for each financial indicator
+ * @param {string} type - the selected indicator name
+ * @param {object} inputs - all possible input values as key-value pairs
+ * @returns {number|null} - the calculated value or null
  */
 export function calculateIndicator(type, inputs) {
-  //segédfüggvény, hogy ne kelljen mindenhol parseFloat-ot írni
+  // Helper function to avoid writing parseFloat everywhere
   const toNum = (v) => parseFloat(v);
 
   switch (type) {
     case "P/E":
-      // ÁR / EPS (Egy részvényre jutó nyereség)
+      // Price / EPS (Earnings Per Share)
       return toNum(inputs.stockPrice) / toNum(inputs.eps);
 
     case "P/B":
-      // Ár / Könyv szerinti érték
+      // Price / Book Value
       return toNum(inputs.stockPrice) / toNum(inputs.bookValue);
 
     case "P/S":
-      // ÁR / Egy részvényre jutó bevétel
+      // Price / Sales per Share
       return toNum(inputs.stockPrice) / toNum(inputs.ps);
 
     case "PEG Ratio":
-      // P/E osztva a növekedési ütemmel
+      // P/E divided by Growth Rate
       return toNum(inputs.peg) / toNum(inputs.growthRate);
 
-    case "Dividend Yield (Osztalékhozam)":
-      // Osztalék / Ár * 100 (Százalékos hozam)
+    case "Dividend Yield":
+      // Dividend / Price * 100 (Percentage yield)
       return (toNum(inputs.dy) / toNum(inputs.stockPrice)) * 100;
 
-    case "Debt-to-Equity Ratio (Adósság/saját tőke arány)":
-      // Teljes adósság / saját tőke
+    case "Debt-to-Equity Ratio":
+      // Total Debt / Shareholders' Equity
       return toNum(inputs.dte) / toNum(inputs.bookValue);
 
     default:
-      // Ha ismeretlen típust kap, nem számol semmit
+      // If an unknown type is passed, return nothing
       return null;
   }
 }

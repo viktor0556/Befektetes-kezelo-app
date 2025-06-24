@@ -1,11 +1,11 @@
 import React from "react";
 
 /**
- * Egy mező label-lel, értékkel, onChange-l, hibával
- * @param {string} label - a mező neve
- * @param {string} value - az aktuális érték
- * @param {function} onChange - változáskezelő
- * @param {string} error - hibaüzenet (ha van)
+ * A field with label, value, onChange, error
+ * @param {string} label - field name
+ * @param {string} value - current value
+ * @param {function} onChange - change manager
+ * @param {string} error - error message (if any)
  */
 
 const InputField = ({ label, placeholder, value, onChange, error}) => {

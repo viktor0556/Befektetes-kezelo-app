@@ -6,7 +6,7 @@ const InvestmentForm = ({
   return (
     <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md mt-6">
       <h2 className="text-lg font-semibold mb-4 text-gray-800">
-        Új befektetés hozzáadása
+        Add new investment
       </h2>
       <form>
         <div className="mb-4">
@@ -14,7 +14,7 @@ const InvestmentForm = ({
             htmlFor="investmentName"
             className="block text-gray-700 font-medium mb-1"
           >
-            Név:
+            Name:
           </label>
           <input
             id="investmentName"
@@ -30,7 +30,7 @@ const InvestmentForm = ({
             htmlFor="investmentAmount"
             className="block text-gray-700 font-medium mb-1"
           >
-            Összeg:
+            Amount:
           </label>
           <input
             id="investmentAmount"
@@ -110,7 +110,7 @@ const InvestmentForm = ({
             htmlFor="investmentDY"
             className="block text-gray-700 font-medium mb-1"
           >
-            Dividend Yield (Osztalékhozam):
+            Dividend Yield:
           </label>
           <input
           placeholder="Divined Yield"
@@ -126,7 +126,7 @@ const InvestmentForm = ({
             htmlFor="investmentDTE"
             className="block text-gray-700 font-medium mb-1"
           >
-            Debt-to-Equity Ratio (adósság/saját tőke arány):
+            Debt-to-Equity Ratio:
           </label>
           <input
           placeholder="Debt to Equity"
@@ -158,7 +158,7 @@ const InvestmentForm = ({
           onClick={onSave}
           className="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
         >
-          Mentés
+          Save
         </button>
       </form>
     </div>

@@ -15,7 +15,7 @@ const EconomicNews = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-      <h1 className="text-2xl font-bold mb-4">Gazdasági hírek és hatásuk</h1>
+      <h1 className="text-2xl font-bold mb-4">Economic News and Their Impact</h1>
 
       <nav className="mb-6 p-4 bg-gray-100 rounded-lg">
         <ul className="flex flex-wrap gap-4 justify-center">
@@ -37,150 +37,122 @@ const EconomicNews = () => {
       </nav>
 
       <section id="jegybank" className="mb-6">
-        <h2
-          className={`text-xl font-semibold mb-2 transition duration-300 p-2 rounded-lg ${
-            selected === "jegybank" ? "bg-yellow-200" : ""
-          }`}
-        >
-          Jegybank
+        <h2 className={`text-xl font-semibold mb-2 transition duration-300 p-2 rounded-lg ${
+          selected === "jegybank" ? "bg-yellow-200" : ""
+        }`}>
+          Central Bank
         </h2>
         <p className="text-gray-700">
-          A központi bankok döntéseket hoznak a kamatokról, monetáris
-          politikáról, mint például lazítás vagy szigorítás.
+          Central banks make decisions on interest rates and monetary policy, such as tightening or easing.
         </p>
         <ul className="list-disc list-inside text-gray-700 mt-2">
           <li>
-            <strong>Mi történik?</strong> A jegybank megváltoztatja a kamatlábat
-            vagy pénzkínálatot.
+            <strong>What happens?</strong> The central bank changes interest rates or the money supply.
           </li>
           <li>
-            <strong>Hogyan reagálnak a piacok?</strong> Kamatemeléskor
-            részvények és kockázatos eszközök ára eshet, lazításkor emelkedhet.
+            <strong>How do markets react?</strong> When rates rise, stocks and risky assets may fall; with easing, prices may increase.
           </li>
         </ul>
       </section>
 
       <section id="kamatemeles" className="mb-6">
-        <h2
-          className={`text-xl font-semibold mb-2 transition duration-300 p-2 rounded-lg ${
-            selected === "kamatemeles" ? "bg-yellow-200" : ""
-          }`}
-        >
-          Kamatemelés
+        <h2 className={`text-xl font-semibold mb-2 transition duration-300 p-2 rounded-lg ${
+          selected === "kamatemeles" ? "bg-yellow-200" : ""
+        }`}>
+          Interest Rate Hike
         </h2>
         <p className="text-gray-700">
-          Lassulhat a gazdaság, csökkenhet a részvények vonzereje.
+          The economy may slow down and the appeal of stocks may decrease.
         </p>
         <ul className="list-disc list-inside text-gray-700 mt-2">
           <li>
-            <strong>Mi történik?</strong> Drágulnak a hitelek, csökken a
-            fogyasztás.
+            <strong>What happens?</strong> Loans become more expensive, reducing consumption.
           </li>
           <li>
-            <strong>Hogyan reagálnak a piacok?</strong> A részvénypiacok
-            jellemzően negatívan, a banki részvények pozitívan reagálnak.
+            <strong>How do markets react?</strong> Stock markets typically respond negatively, but bank stocks may perform well.
           </li>
           <li>
-            <strong>Mit érdemes tenni?</strong> Csökkentsd a részvényarányt,
-            vagy válts defenzív részvényekre.
+            <strong>What should you do?</strong> Reduce stock exposure or shift to defensive stocks.
           </li>
         </ul>
       </section>
 
       <section id="inflacio" className="mb-6">
-        <h2
-          className={`text-xl font-semibold mb-2 transition duration-300 p-2 rounded-lg ${
-            selected === "inflacio" ? "bg-yellow-200" : ""
-          }`}
-        >
-          Infláció
+        <h2 className={`text-xl font-semibold mb-2 transition duration-300 p-2 rounded-lg ${
+          selected === "inflacio" ? "bg-yellow-200" : ""
+        }`}>
+          Inflation
         </h2>
         <p className="text-gray-700">
-          A pénz értéke csökken, drágulnak a termékek.
+          Money loses value, and product prices rise.
         </p>
         <ul className="list-disc list-inside text-gray-700 mt-2">
           <li>
-            <strong>Mi történik?</strong> Az infláció csökkenti a vásárlóerőt.
+            <strong>What happens?</strong> Inflation reduces purchasing power.
           </li>
           <li>
-            <strong>Hogyan reagálnak a piacok?</strong> A részvények vegyesen, a
-            nyersanyagok (pl. arany, nyersanyagok) pozitívan reagálnak.
+            <strong>How do markets react?</strong> Stocks respond mixed; commodities like gold may rise.
           </li>
           <li>
-            <strong>Mit érdemes tenni?</strong> Vegyél inflációvédett
-            befektetéseket (pl. inflációkövető állampapír, nyersanyag).
+            <strong>What should you do?</strong> Invest in inflation-protected assets (e.g., indexed bonds, commodities).
           </li>
         </ul>
       </section>
 
       <section id="tech" className="mb-6">
-        <h2
-          className={`text-xl font-semibold mb-2 transition duration-300 p-2 rounded-lg ${
-            selected === "tech" ? "bg-yellow-200" : ""
-          }`}
-        >
-          Tech
+        <h2 className={`text-xl font-semibold mb-2 transition duration-300 p-2 rounded-lg ${
+          selected === "tech" ? "bg-yellow-200" : ""
+        }`}>
+          Technology
         </h2>
         <p className="text-gray-700">
-          Megjelenik egy új technológia, ami gyorsítja vagy megváltoztatja a
-          gazdaság működését.
+          New technologies emerge that accelerate or reshape how the economy works.
         </p>
         <ul className="list-disc list-inside text-gray-700 mt-2">
           <li>
-            <strong>Mi történik?</strong> Új technológiák (pl. mesterséges
-            intelligencia, automatizálás) befolyásolják a piacokat.
+            <strong>What happens?</strong> Innovations like AI and automation affect the markets.
           </li>
           <li>
-            <strong>Hogyan reagálnak a piacok?</strong> Növekvő szektorok
-            részvényei emelkedhetnek, más szektorok eshetnek.
+            <strong>How do markets react?</strong> Stocks in growing sectors may rise, while others may fall.
           </li>
           <li>
-            <strong>Mit érdemes tenni?</strong> Keress befektetéseket növekedési
-            iparágakban (pl. AI, zöld energia).
+            <strong>What should you do?</strong> Look for investments in growth sectors (e.g., AI, green energy).
           </li>
         </ul>
       </section>
 
       <section id="zold" className="mb-6">
-        <h2
-          className={`text-xl font-semibold mb-2 transition duration-300 p-2 rounded-lg ${
-            selected === "zold" ? "bg-yellow-200" : ""
-          }`}
-        >
-          Technológia változások: Zöld energia
+        <h2 className={`text-xl font-semibold mb-2 transition duration-300 p-2 rounded-lg ${
+          selected === "zold" ? "bg-yellow-200" : ""
+        }`}>
+          Technological Changes: Green Energy
         </h2>
         <p className="text-gray-700">
-          Növekedési lehetőség a megújuló energiában, csökken a fosszilis
-          üzemanyagok vonzereje.
+          Growth opportunities in renewables as the appeal of fossil fuels declines.
         </p>
         <ul className="list-disc list-inside text-gray-700 mt-2">
           <li>
-            <strong>Mi történik?</strong> Erősödik a fenntarthatóság, nő a zöld
-            energiába áramló tőke.
+            <strong>What happens?</strong> Sustainability strengthens, and capital flows into green energy.
           </li>
           <li>
-            <strong>Hogyan reagálnak a piacok?</strong> Zöld energia részvények
-            emelkednek, fosszilis cégek értéke csökkenhet.
+            <strong>How do markets react?</strong> Green energy stocks rise, while fossil fuel companies may lose value.
           </li>
           <li>
-            <strong>Mit érdemes tenni?</strong> Fektess környezetbarát ETF-ekbe
-            vagy részvényekbe.
+            <strong>What should you do?</strong> Invest in eco-friendly ETFs or stocks.
           </li>
         </ul>
       </section>
 
       <section id="hasznalat">
-        <h2
-          className={`text-xl font-semibold mb-2 transition duration-300 p-2 rounded-lg ${
-            selected === "hasznalat" ? "bg-yellow-200" : ""
-          }`}
-        >
-          Hogyan használd ezeket az infókat?
+        <h2 className={`text-xl font-semibold mb-2 transition duration-300 p-2 rounded-lg ${
+          selected === "hasznalat" ? "bg-yellow-200" : ""
+        }`}>
+          How to Use This Information
         </h2>
         <ul className="list-disc list-inside text-gray-700">
-          <li>Diverzifikálj, ha bizonytalanságot érzékelsz.</li>
-          <li>Kerüld a túlértékelt részvényeket kockázatos időszakban.</li>
-          <li>Használd ki az alacsony árakat hosszú távú befektetésként.</li>
+          <li>Diversify your portfolio when facing uncertainty.</li>
+          <li>Avoid overvalued stocks during risky periods.</li>
+          <li>Take advantage of low prices for long-term investing.</li>
         </ul>
       </section>
     </div>

@@ -13,8 +13,8 @@ const IndicatorCalculations = () => {
     "P/B": ["stockPrice", "bookValue"],
     "P/S": ["stockPrice", "ps"],
     "PEG Ratio": ["peg", "growthRate"],
-    "Dividend Yield (Osztalékhozam)": ["dy", "stockPrice"],
-    "Debt-to-Equity Ratio (Adósság/saját tőke arány)": ["dte", "bookValue"],
+    "Dividend Yield": ["dy", "stockPrice"],
+    "Debt-to-Equity Ratio": ["dte", "bookValue"],
     "EV/EBITDA": ["ev", "ebitda"],
   };
   const needed = requiredFields[selectedIndicator] || [];
@@ -34,13 +34,13 @@ const IndicatorCalculations = () => {
 
   return (
     <div className="p-4 bg-white shadow-lg rounded-lg">
-      <label className="font-bold">Válassz mutatót:</label>
+      <label className="font-bold">Choose an indicator:</label>
       <select
         value={selectedIndicator}
         onChange={handleIndicatorChange}
         className="block w-full p-2 mb-4 border border-gray-300 rounded-md"
       >
-        <option value="">-- Válassz mutatót --</option>
+        <option value="">-- Choose an indicator --</option>
         {Object.keys(indicatorDescriptions).map((key) => (
           <option key={key} value={key}>
             {key}
@@ -52,7 +52,7 @@ const IndicatorCalculations = () => {
         <>
           <div className="bg-gray-100 p-3 rounded-md mb-4">
             <h3 className="font-semibold text-lg">
-              {selectedIndicator} magyarázata
+              {selectedIndicator} explanation
             </h3>
             <p>{indicatorDescriptions[selectedIndicator].explanation}</p>
             <ul className="list-disc ml-4 mt-2 text-gray-600">
@@ -75,12 +75,12 @@ const IndicatorCalculations = () => {
             onClick={calculateResult}
             className="w-full p-2 mt-3 bg-blue-500 text-white rounded-md hover:bg-blue-600"
           >
-            Számítás
+            Calculation
           </button>
 
           {result !== null && (
             <p className="mt-3 font-bold">
-              {selectedIndicator} értéke: {result}
+              {selectedIndicator} value: {result}
             </p>
           )}
         </>

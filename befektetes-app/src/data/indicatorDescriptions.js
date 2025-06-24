@@ -1,56 +1,61 @@
 const indicatorDescriptions = {
   "P/E": {
     explanation:
-      "A P/E mutató (Price-to-Earnings) azt mutatja meg, hogy a részvény árfolyama hányszorosát éri az egy részvényre jutó nyereségnek (EPS).",
+      "The P/E ratio (Price-to-Earnings) shows how many times the stock price is compared to the earnings per share (EPS).",
     interpretation: [
-      "Ha magas (30+), akkor a részvény drágának számíthat, és nagy növekedési várakozás van mögötte.",
-      "Ha alacsony (10-20), akkor a részvény olcsóbb lehet, de fontos a cég jövőbeli kilátásait is figyelembe venni.",
-      "Nagyon alacsony érték (pl. 5 alatt) arra utalhat, hogy a piac nem bízik a cég növekedésében.",
+      "If it's high (30+), the stock may be considered expensive and backed by strong growth expectations.",
+      "If it's low (10-20), the stock might be cheaper, but it's important to also consider the company's future outlook.",
+      "Very low values (e.g., below 5) may indicate that the market lacks confidence in the company's growth.",
     ],
   },
   "P/B": {
     explanation:
-      "A P/B mutató (Price-to-Book) megmutatja, hogy a részvény árfolyama hogyan viszonyul a vállalat könyv szerinti értékéhez.",
+      "The P/B ratio (Price-to-Book) shows how the stock price compares to the company's book value.",
     interpretation: [
-      "Ha 1 alatt van, akkor a részvény alulértékelt lehet, mert a cég eszközei többet érnek, mint a részvények összesített piaci értéke.",
-      "Ha 1 felett van, akkor a piac többre értékeli a céget, de ha túl magas (10+), lehet, hogy túlértékelt a részvény.",
+      "If it's below 1, the stock may be undervalued, as the company's assets are worth more than its total market value.",
+      "If it's above 1, the market values the company higher — but if it's too high (10+), the stock may be overvalued.",
     ],
   },
   "P/S": {
-    explanation: "A P/S (Price-to-Sales) mutató megmutatja, hogy a cég részvényének árfolyama hogyan viszonyul az egy részvényre jutó éves bevételhez.",
+    explanation:
+      "The P/S (Price-to-Sales) ratio shows how the stock price relates to the company's annual revenue per share.",
     interpretation: [
-      "Alacsony érték (1 alatt) kedvező, jelezheti, hogy alulértékelt.",
-      "Magas érték (10+) jelentős növekedési várakozásokat tükröz, de túlárazottságra is utalhat.",
+      "A low value (below 1) is favorable and may indicate undervaluation.",
+      "A high value (10+) reflects strong growth expectations but may also signal overvaluation.",
     ],
   },
   "PEG Ratio": {
-    explanation: "A PEG Ratio megmutatja, hogy a P/E érték mennyire van összhangban a cég várható növekedési ütemével.",
+    explanation:
+      "The PEG ratio shows how well the P/E value aligns with the company's expected growth rate.",
     interpretation: [
-      "1 alatti PEG alulértékeltséget jelez.",
-      "1 feletti érték magas növekedési várakozásokat mutat, drága lehet a részvény.",
+      "A PEG below 1 indicates potential undervaluation.",
+      "A PEG above 1 reflects high growth expectations and could mean the stock is expensive.",
     ],
   },
-  "Dividend Yield (Osztalékhozam)": {
-    explanation: "Az osztalékhozam azt jelzi, hogy egy részvény éves osztaléka hány százaléka a jelenlegi részvényárnak.",
+  "Dividend Yield": {
+    explanation:
+      "Dividend yield shows what percentage of the current stock price is paid out as annual dividends.",
     interpretation: [
-      "Magas osztalékhozam (5%+) vonzó lehet passzív jövedelemre törekvő befektetőknek.",
-      "Alacsony osztalékhozam növekedési részvényekre jellemző.",
+      "High yield (5%+) may be attractive for income-seeking investors.",
+      "Low yield is typical for growth stocks.",
     ],
   },
-  "Debt-to-Equity Ratio (Adósság/saját tőke arány)": {
-    explanation: "Ez a mutató a cég pénzügyi stabilitását és hitelállományát mutatja meg.",
+  "Debt-to-Equity Ratio": {
+    explanation:
+      "This ratio indicates the company's financial stability and level of indebtedness.",
     interpretation: [
-      "Magas arány (2+) kockázatos lehet, túlzott eladósodottságra utalhat.",
-      "Alacsony arány (1 alatt) stabil pénzügyi helyzetre utal.",
+      "A high ratio (2+) could be risky and may indicate excessive debt.",
+      "A low ratio (below 1) suggests a stable financial position.",
     ],
   },
   "EV/EBITDA": {
-    explanation: "Az EV/EBITDA megmutatja, hogy a vállalat értéke hogyan viszonyul az éves üzemi eredményéhez (EBITDA).",
+    explanation:
+      "The EV/EBITDA ratio shows how the company's enterprise value compares to its annual operating earnings (EBITDA).",
     interpretation: [
-      "Alacsony érték (10 alatt) kedvező lehet, a vállalat alulértékelt.",
-      "Magas érték (20+) a piac magas elvárásait tükrözi, és drága lehet.",
+      "A low value (below 10) may be favorable and suggest undervaluation.",
+      "A high value (20+) reflects strong market expectations and may indicate the stock is expensive.",
     ],
   },
 };
 
-export default indicatorDescriptions
+export default indicatorDescriptions;

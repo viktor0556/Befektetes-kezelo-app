@@ -2,239 +2,236 @@ const terms = [
   {
     "ETF (Exchange Traded Fund)": {
       description:
-        "Olyan befektetési alap, amely több részvényből áll, és egyetlen részvényként vásárolható meg.",
-      related: ["VUSA ETF (Vanguard S&P 500)", "Diverzifikáció", "Alapok"],
+        "An investment fund composed of multiple stocks that can be purchased as a single stock.",
+      related: ["VUSA ETF (Vanguard S&P 500)", "Diversification", "Funds"],
     },
     "VUSA ETF (Vanguard S&P 500)": {
       description:
-        "Az 500 legnagyobb amerikai cég részvényét tartalmazza, pl. Apple, Microsoft, Tesla, Amazon.",
+        "Includes shares of the 500 largest U.S. companies, e.g., Apple, Microsoft, Tesla, Amazon.",
       related: [
         "ETF (Exchange Traded Fund)",
-        "Portfólió összetétel",
-        "Szektor súlyozás",
+        "Portfolio Composition",
+        "Sector Weighting",
       ],
     },
-    "ETF előnyei (Diverzifikáció)": {
+    "ETF Benefits (Diversification)": {
       description:
-        "Egy ETF sok részvényt tartalmaz, így csökkenti a kockázatot. Hosszú távon stabil hozamot ad (évi 8-10%).",
-      related: ["ETF (Exchange Traded Fund)", "Kockázatkezelés"],
+        "An ETF contains many stocks, reducing risk. It provides stable long-term returns (8-10% annually).",
+      related: ["ETF (Exchange Traded Fund)", "Risk Management"],
     },
-    "Portfólió összetétel (Holdings, Assets)": {
+    "Portfolio Composition (Holdings, Assets)": {
       description:
-        "Megmutatja, hogy az ETF pénzének hány %-a van egyes cégek részvényeiben. Pl. Apple a VUSA 6,97%-át teszi ki, így ha az Apple jól teljesít, a VUSA is emelkedik.",
-      related: ["VUSA ETF (Vanguard S&P 500)", "Szektor súlyozás"],
+        "Shows the percentage of the ETF's money invested in individual companies. For example, Apple makes up 6.97% of VUSA, so if Apple performs well, VUSA increases too.",
+      related: ["VUSA ETF (Vanguard S&P 500)", "Sector Weighting"],
     },
-    "Szektor súlyozás (Sector Weightings)": {
+    "Sector Weighting": {
       description:
-        "Megmutatja, hogy az ETF milyen iparágakban van jelen. Pl. a VUSA-ban a technológiai szektor dominál (31,97%). Ha a tech iparág esik, az ETF is veszít az értékéből.",
-      related: ["Portfólió összetétel", "Piaci trendek"],
+        "Shows the industries the ETF is invested in. For example, VUSA is dominated by the tech sector (31.97%). If tech drops, the ETF value also falls.",
+      related: ["Portfolio Composition", "Market Trends"],
     },
-    "Költségek (TER - Total Expense Ratio)": {
+    "Costs (TER - Total Expense Ratio)": {
       description:
-        "Az ETF fenntartási költsége, általában 0,05-0,2%. Pl. a VUSA esetében 0,07%, ami alacsony költségnek számít.",
+        "The maintenance cost of an ETF, usually 0.05–0.2%. For example, VUSA has a TER of 0.07%, which is low.",
       related: ["ETF (Exchange Traded Fund)"],
     },
-    "Piaci értékeltség mutatók (P/E, P/B, P/S stb.)": {
+    "Market Valuation Metrics (P/E, P/B, P/S etc.)": {
       description:
-        "Ezeket a mutatókat részvényeknél és ETF-eknél is figyeljük. ETF-eknél az összes benne lévő cég átlagértékeit kapjuk meg.",
+        "These ratios are monitored for both stocks and ETFs. For ETFs, you get the average values of the underlying companies.",
       related: [
         "P/E (Price/Earnings)",
         "P/B (Price/Book)",
         "P/S (Price/Sales)",
       ],
     },
-    "P/E (Price/Earnings) - Ár/Nyereség": {
+    "P/E (Price/Earnings)": {
       description:
-        "A részvény árát viszonyítja a cég egy részvényre jutó nyereségéhez. • Magas (30+) → Drága részvény, a befektetők növekedést várnak. • Alacsony (10-20) → Olcsóbb lehet, de figyelni kell az iparági átlagot.",
+        "Compares the stock price to the earnings per share. • High (30+) → Expensive stock, growth expected. • Low (10–20) → Possibly undervalued, but check industry average.",
       related: ["PEG Ratio", "P/B (Price/Book)", "P/S (Price/Sales)"],
     },
-    "P/B (Price/Book) - Ár/Könyv szerinti érték": {
+    "P/B (Price/Book)": {
       description:
-        "Megmutatja, hogy a részvény ára hogyan viszonyul a cég eszközeihez. • 1 alatt → A cég eszközei többet érnek, azaz olcsó lehet. • 1 felett → A piac többre értékeli a céget, ami növekedési várakozást jelenthet.",
+        "Compares the stock price to the company's assets. • Below 1 → Assets are worth more, could be undervalued. • Above 1 → Market expects growth.",
       related: ["P/S (Price/Sales)", "P/E (Price/Earnings)"],
     },
-    "P/S (Price/Sales) - Ár/Bevétel": {
+    "P/S (Price/Sales)": {
       description:
-        "A részvény árát viszonyítja a cég bevételeihez. • 1 alatt → A részvény olcsó a bevételéhez képest. • 10+ → Extrém növekedési várakozást jelenthet, ami kockázatos lehet.",
+        "Compares the stock price to the company's revenue. • Below 1 → Cheap relative to revenue. • 10+ → High growth expectation, riskier.",
       related: ["P/B (Price/Book)", "P/E (Price/Earnings)"],
     },
-    "PEG Ratio - Ár/Nyereség és növekedés": {
+    "PEG Ratio (Price/Earnings to Growth)": {
       description:
-        "A P/E mutatót osztja a növekedési ütemmel. • 1 alatt → Olcsó a jövőbeni növekedéshez képest. • 1 felett → Drágább lehet, de gyorsan növekvő cégeknél elfogadható.",
-      related: ["P/E (Price/Earnings)", "Növekedési részvények"],
+        "P/E divided by growth rate. • Below 1 → Cheap relative to future growth. • Above 1 → Can be acceptable for fast-growing companies.",
+      related: ["P/E (Price/Earnings)", "Growth Stocks"],
     },
-    "Részvények értékelése: Drága vagy olcsó?": {
+    "Stock Valuation: Expensive or Cheap?": {
       description:
-        "• Ha a P/E magas, a részvény drága lehet. • Ha a P/B 1 alatt van, lehet alulértékelt. • Ha a P/S alacsony, a részvény olcsónak számít a bevételhez képest.",
+        "• High P/E may indicate an expensive stock. • P/B below 1 may signal undervaluation. • Low P/S suggests the stock is cheap compared to revenue.",
       related: [
         "P/E (Price/Earnings)",
         "P/B (Price/Book)",
         "P/S (Price/Sales)",
       ],
     },
-    "Mit árul el a növekedési ütem?": {
+    "What Does Growth Rate Tell Us?": {
       description:
-        "• A PEG Ratio 1 alatt jó jel → A cég drága, de a növekedése igazolja az árát. • Ha a PEG Ratio is magas, akkor túlértékelhetik a növekedési várakozásokat.",
+        "• PEG below 1 is a good sign → High growth justifies the price. • High PEG may indicate overvaluation of growth expectations.",
       related: ["PEG Ratio", "P/E (Price/Earnings)"],
     },
-    "Kockázat és stabilitás": {
+    "Risk and Stability": {
       description:
-        "• Ha P/E, P/B és P/S mind magas, az részvény kockázatos lehet. • Ha egy cégnek nagy adóssága van, az extra kockázatot jelenthet.",
+        "• High P/E, P/B, and P/S may mean higher risk. • High company debt adds extra risk.",
       related: [
         "P/E (Price/Earnings)",
         "P/B (Price/Book)",
         "P/S (Price/Sales)",
       ],
     },
-    "Mikor lehet jó vétel egy részvény?": {
+    "When Is a Stock a Good Buy?": {
       description:
-        "• Ha a P/E alacsony, de a cég stabilan növekszik. • Ha a P/B és P/S alacsony, de nincs csökkenő trend. • Ha a PEG Ratio 1 alatt van, az jó vételi lehetőség lehet.",
-      related: ["Részvények értékelése: Drága vagy olcsó?", "Piaci trendek"],
+        "• Low P/E with stable growth. • Low P/B and P/S without a downtrend. • PEG Ratio under 1 can indicate a good buying opportunity.",
+      related: ["Stock Valuation: Expensive or Cheap?", "Market Trends"],
     },
-    "Árfolyamnyereség": {
+    "Capital Gain": {
       description:
-        "Az az összeg, amit akkor realizálsz, ha egy részvényt vagy más értékpapírt drágábban adsz el, mint amennyiért vetted.",
-      related: ["Árfolyamveszteség", "ROI (Return on Investment)"],
+        "The profit made when selling a stock or other asset for more than it was purchased.",
+      related: ["Capital Loss", "ROI (Return on Investment)"],
     },
     "IPO (Initial Public Offering)": {
       description:
-        "Az a folyamat, amikor egy vállalat először válik nyilvánosan elérhetővé a tőzsdén, és befektetők számára értékesíti részvényeit.",
-      related: ["Értékpapír-piac", "Részvények értékelése: Drága vagy olcsó?"],
+        "The process by which a company goes public, selling shares on the stock exchange for the first time.",
+      related: ["Securities Market", "Stock Valuation: Expensive or Cheap?"],
     },
-    "Volatilitás": {
+    "Volatility": {
       description:
-        "Az árfolyamok ingadozásának mértéke egy adott időszakban. Nagyobb volatilitás magasabb kockázatot jelez.",
-      related: ["Árfolyamnyereség", "Árfolyamveszteség"],
+        "The degree of price fluctuation over a period of time. Higher volatility means higher risk.",
+      related: ["Capital Gain", "Capital Loss"],
     },
-    "EPS (egy részvényre jutó nyereség)": {
+    "EPS (Earnings Per Share)": {
       description:
-        "Megmutatja, hogy egy vállalat mekkora profitot termel egyetlen részvényre vetítve. Magas EPS pozitív jel.",
-      related: ["P/E mutató", "ROE (Return on Equity)"],
+        "Shows how much profit a company makes per share. High EPS is a positive sign.",
+      related: ["P/E Ratio", "ROE (Return on Equity)"],
     },
     "ROE (Return on Equity)": {
       description:
-        "A saját tőke megtérülése, amely megmutatja, hogy a vállalat mennyire hatékonyan használja a saját tőkéjét nyereségtermelésre.",
-      related: [
-        "ROI (Return on Investment)",
-        "EPS (egy részvényre jutó nyereség)",
-      ],
+        "Indicates how efficiently a company uses shareholder equity to generate profit.",
+      related: ["ROI (Return on Investment)", "EPS (Earnings Per Share)"],
     },
     "ROI (Return on Investment)": {
       description:
-        "A befektetés megtérülési mutatója, amely százalékosan kifejezi, hogy egy adott befektetés milyen hatékonyan termel profitot.",
-      related: ["ROE (Return on Equity)", "Árfolyamnyereség"],
+        "Measures how efficiently a given investment generates profit, expressed as a percentage.",
+      related: ["ROE (Return on Equity)", "Capital Gain"],
     },
-    "Kötvény": {
+    "Bond": {
       description:
-        "Egy hitelviszonyt megtestesítő értékpapír, amely rendszeres kamatfizetést ígér a befektetők számára.",
-      related: ["Értékpapír-piac", "Kamatemelés hatása a befektetésekre"],
+        "A debt instrument that pays regular interest to investors.",
+      related: ["Securities Market", "Effect of Interest Rate Hikes"],
     },
-    "Árfolyamveszteség": {
+    "Capital Loss": {
       description:
-        "Amikor egy befatketés értéke csökken, és kevesebb pénzért tudod eladni, mint amennyiért vetted.",
-      related: ["Árfolyamnyereség", "Volatilitás"],
+        "When an investment loses value and is sold for less than it was bought for.",
+      related: ["Capital Gain", "Volatility"],
     },
-    "Értékpapír-piac": {
+    "Securities Market": {
       description:
-        "Az a hely, ahol a befektetők értékpapírokkal, például részvényekkel és kötvényekkel kereskednek.",
-      related: ["IPO (Initial Public Offering)", "Day trading"],
+        "The marketplace where investors trade securities like stocks and bonds.",
+      related: ["IPO (Initial Public Offering)", "Day Trading"],
     },
-    "Day trading": {
+    "Day Trading": {
       description:
-        "Olyan kereskedési stratégia, amikor a befektető aznap vesz és ad el értékpapírokat profit elérése érdekében.",
-      related: ["Volatilitás", "Értékpapír-piac"],
+        "A strategy where a trader buys and sells securities within the same day to make a profit.",
+      related: ["Volatility", "Securities Market"],
     },
-    "Infláció": {
+    "Inflation": {
       description:
-        "Az árak általános és tartós emelkedése, ami a pénz értékének csökkenéséhez vezet.",
-      related: ["Kamatemelés", "Stagfláció"],
+        "A general and sustained increase in prices, leading to a decrease in purchasing power.",
+      related: ["Interest Rate Hike", "Stagflation"],
     },
-    "Befektetés-politika": {
+    "Investment Policy": {
       description:
-        "Egy vállalat irányelve, amely meghatározza, milyen stratégiát követ a befektetések kezelésében.",
-      related: ["Osztalékfizetés", "Kötvények"],
+        "A company’s guideline that determines the strategy for managing investments.",
+      related: ["Dividend Payments", "Bonds"],
     },
-    "Long pozíció": {
+    "Long Position": {
       description:
-        "Részvény vagy eszköz vásárlása annak reményében, hogy annak ára növekedni fog, és profit realizálható a későbbi magasabb áron való eladással.",
-      related: ["Portfólió diverzifikáció", "ETF", "Befektetési alapok"],
+        "Buying a stock or asset expecting its price to rise and profit from selling it later at a higher price.",
+      related: ["Portfolio Diversification", "ETF", "Mutual Funds"],
     },
-    "Short pozíció": {
+    "Short Position": {
       description:
-        "Egy eszköz kölcsönvétele és eladása azzal a céllal, hogy később alacsonyabb áron visszavásárolva nyereséget realizáljunk az árcsökkenésből.",
+        "Borrowing and selling an asset expecting to buy it back later at a lower price to profit from the drop.",
       related: [
-        "Opciók (Call, Put)",
-        "Forward, Future szerződések",
-        "Derivatívák",
+        "Options (Call, Put)",
+        "Forward, Futures Contracts",
+        "Derivatives",
       ],
     },
-    "Portfólió diverzifikáció": {
+    "Portfolio Diversification": {
       description:
-        "A befektetések kockázatának csökkentése érdekében különböző típusú és iparágakban működő eszközökbe való befektetés.",
-      related: ["ETF", "Befektetési alapok", "Blue-chip részvények"],
+        "Spreading investments across various types and industries to reduce risk.",
+      related: ["ETF", "Mutual Funds", "Blue-chip Stocks"],
     },
-    "Blue-chip részvények": {
+    "Blue-chip Stocks": {
       description:
-        "Nagy, stabil, jól ismert és megbízható cégek részvényei, amelyek általában stabil bevételt és osztalékot biztosítanak.",
+        "Shares of large, stable, reputable companies that usually provide consistent income and dividends.",
       related: [
-        "Piaci kapitalizáció",
-        "Long pozíció",
-        "Portfólió diverzifikáció",
+        "Market Capitalization",
+        "Long Position",
+        "Portfolio Diversification",
       ],
     },
-    "OTC (Over the Counter) piac": {
+    "OTC (Over-the-Counter) Market": {
       description:
-        "Olyan decentralizált piac, ahol a kereskedések közvetlenül a piaci szereplők között zajlanak, nem pedig központosított tőzsdén.",
-      related: ["Derivatívák", "Hedge fundok", "Forward, Future szerződések"],
+        "A decentralized market where trading happens directly between parties, not via a centralized exchange.",
+      related: ["Derivatives", "Hedge Funds", "Forward, Futures Contracts"],
     },
-    "Befektetési alapok": {
+    "Mutual Funds": {
       description:
-        "Sok befektető pénzét összegyűjtve, egy profi alapkezelő irányításával diverzifikált befektetési portfólióba fektető pénzügyi eszközök.",
-      related: ["ETF", "Portfólió diverzifikáció", "Long pozíció"],
+        "Financial instruments that pool money from multiple investors to create a diversified portfolio managed by professionals.",
+      related: ["ETF", "Portfolio Diversification", "Long Position"],
     },
     "Margin Trading": {
       description:
-        "Kölcsönzött pénz használata befektetéshez, hogy nagyobb nyereséget érhessünk el, miközben magasabb a kockázata is.",
-      related: ["Short pozíció", "Long pozíció", "Derivatívák"],
+        "Using borrowed money to invest, aiming for higher returns but also taking on greater risk.",
+      related: ["Short Position", "Long Position", "Derivatives"],
     },
-    "Piaci kapitalizáció": {
+    "Market Capitalization": {
       description:
-        "A vállalat piaci értéke, amelyet a részvényárfolyam és a forgalomban lévő részvények számának szorzata ad.",
-      related: ["Blue-chip részvények", "ETF", "Részvényértékelés"],
+        "The total market value of a company, calculated by multiplying the share price by the number of outstanding shares.",
+      related: ["Blue-chip Stocks", "ETF", "Stock Valuation"],
     },
-    "Fundamentális elemzés": {
+    "Fundamental Analysis": {
       description:
-        "Befektetési módszer, amely a vállalat pénzügyi és gazdasági mutatóit vizsgálja a belső értékének meghatározására.",
-      related: ["P/E Ratio", "P/B Ratio", "Portfólió diverzifikáció"],
+        "An investment method analyzing a company’s financial and economic indicators to determine its intrinsic value.",
+      related: ["P/E Ratio", "P/B Ratio", "Portfolio Diversification"],
     },
-    "Technikai elemzés": {
+    "Technical Analysis": {
       description:
-        "A részvények ármozgásának és kereskedési volumenének grafikonokon történő elemzése, múltbeli adatok alapján történő előrejelzéshez.",
-      related: ["Short pozíció", "Long pozíció", "Opciók"],
+        "A method of predicting stock movements based on past price and volume trends using charts.",
+      related: ["Short Position", "Long Position", "Options"],
     },
-    "Makro- és mikroökonómia": {
+    "Macroeconomics and Microeconomics": {
       description:
-        "Makrogazdaság: országok gazdasági teljesítményét és globális gazdasági folyamatokat vizsgál. Mikroökonómia: egyének, vállalatok gazdasági döntéseinek elemzése.",
+        "Macroeconomics studies national and global economies. Microeconomics focuses on individual and company-level decisions.",
       related: [
-        "Fundamentális elemzés",
-        "Technikai elemzés",
-        "Portfólió diverzifikáció",
+        "Fundamental Analysis",
+        "Technical Analysis",
+        "Portfolio Diversification",
       ],
     },
-    "Derivatívák (származtatott ügyletek)": {
+    "Derivatives": {
       description:
-        "Értéküket más, alaptermék (pl. részvény, árutermék, valuta) értékéből származtató pénzügyi eszközök.",
-      related: ["Opciók", "Forward, Future szerződések", "Margin Trading"],
+        "Financial instruments whose value is derived from an underlying asset like stocks, commodities, or currencies.",
+      related: ["Options", "Forward, Futures Contracts", "Margin Trading"],
     },
-    "Forward, Future szerződések": {
+    "Forward, Futures Contracts": {
       description:
-        "Határidős ügyletek, amelyekben a felek előre rögzített áron és időpontban kötelesek kereskedni.",
-      related: ["Opciók", "Short pozíció", "Derivatívák"],
+        "Agreements to buy/sell assets at a fixed price and future date.",
+      related: ["Options", "Short Position", "Derivatives"],
     },
-    "Opciók (Call, Put)": {
+    "Options (Call, Put)": {
       description:
-        "Szerződések, amelyek jogot adnak (de nem kötelezettséget) egy eszköz vételére (Call) vagy eladására (Put) egy meghatározott áron és időpontban.",
-      related: ["Derivatívák", "Margin Trading", "Technikai elemzés"],
+        "Contracts that give the right (but not obligation) to buy (Call) or sell (Put) an asset at a set price and date.",
+      related: ["Derivatives", "Margin Trading", "Technical Analysis"],
     },
   },
 ];

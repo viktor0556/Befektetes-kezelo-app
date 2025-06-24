@@ -58,7 +58,7 @@ const StockSearch = ({ onSelect }) => {
         placeholder="Keresd meg a részvényt vagy ETF-et"
         className="w-full p-2 border border-gray-300 rounded"
       />
-      {loading && <p className="text-gray-500 text-sm">Betöltés...</p>}
+      {loading && <p className="text-gray-500 text-sm">Loading...</p>}
       {suggestions.length > 0 && (
         <ul className="absolute bg-white border border-gray-300 w-full mt-1 rounded shadow-lg">
           {suggestions.map((company) => (

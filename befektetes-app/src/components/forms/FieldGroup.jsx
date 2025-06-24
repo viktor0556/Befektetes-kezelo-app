@@ -6,11 +6,11 @@ import {
 } from "../../data/formLabels";
 
 /**
- * Több input mezőt jelenít meg egy tömb alapján
- * @param {array<string>} fields - a szükséges mezők (stringek tömbje)
- * @param {object} values - useState objektum
- * @param {object} errors - validációs hibák
- * @param {function} handleChange - változáskezelő
+ * Displays multiple input fields based on an array
+ * @param {array<string>} fields - the required fields (array of strings)
+ * @param {object} values - useState object
+ * @param {object} errors - validation errors
+ * @param {function} handleChange - change manager
  */
 
 const FieldGroup = ({ fields, values, errors, handleChange }) => {

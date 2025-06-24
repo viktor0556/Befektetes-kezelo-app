@@ -9,8 +9,8 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { useInvestments } from "../../context/InvestmentContext"
-import AddInvestmentForm from './AddInvestment'
+import { useInvestments } from "../../context/InvestmentContext";
+import AddInvestmentForm from "./AddInvestment";
 
 const FinancialChart = () => {
   const [showAmount, setShowAmount] = useState(true);
@@ -26,27 +26,29 @@ const FinancialChart = () => {
 
   return (
     <div className="container mx-auto px-6 py-8">
-      <h2 className="text-3xl font-semibold mb-2">Befektetési portfólió</h2>
+      <h2 className="text-3xl font-semibold mb-2">Investment Portfolio</h2>
       <p className="text-gray-600 mb-4">
-        Itt láthatod az összes befektetésed grafikus ábrázolását.
+        Here you can see a graphical representation of all your investments.
       </p>
 
       <div className="bg-gray-100 p-4 rounded-lg shadow mb-6">
         <h3 className="font-semibold text-lg mb-2">
-          Használati útmutató a grafikonhoz:
+          Instructions for using the chart:
         </h3>
         <p className="text-sm text-gray-700">
-          A grafikon segít összehasonlítani a befektetéseidet. Ha egy részvény{" "}
-          <strong>alacsony P/B értékkel (1 alatt)</strong> rendelkezik,
-          alulértékelt lehet, míg a <strong>magas értékek</strong> kockázatos
-          befektetést jelezhetnek. Az <strong>összeg vonal</strong> megmutatja,
-          hogy hol összpontosul nagyobb tőke a portfóliódban.
+          The chart helps compare your investments. If a stock has a{" "}
+          <strong>low P/B value (under 1)</strong>, it might be undervalued,
+          while <strong>high values</strong> may indicate a risky investment.
+          The <strong>Amount line</strong> shows where more capital is focused
+          in your portfolio.
         </p>
+
         <div className="mb-6">
           <AddInvestmentForm />
         </div>
+
         <div className="mb-4 bg-gray-100 p-4 rounded-lg shadow-md flex flex-wrap justify-center gap-4">
-          <span className="font-semibold text-gray-700 mr-4">Mutatók:</span>
+          <span className="font-semibold text-gray-700 mr-4">Metrics:</span>
 
           <label className="inline-flex items-center cursor-pointer">
             <input
@@ -55,7 +57,7 @@ const FinancialChart = () => {
               onChange={() => setShowAmount(!showAmount)}
               className="form-checkbox h-5 w-5 text-indigo-600"
             />
-            <span className="ml-2 text-gray-600">Összeg</span>
+            <span className="ml-2 text-gray-600">Amount</span>
           </label>
 
           <label className="inline-flex items-center ml-4 cursor-pointer">
@@ -65,7 +67,7 @@ const FinancialChart = () => {
               onChange={() => setShowPb(!showPb)}
               className="form-checkbox"
             />
-            <span className="ml-2">P/B mutató</span>
+            <span className="ml-2">P/B Ratio</span>
           </label>
 
           <label className="inline-flex items-center cursor-pointer ml-4">
@@ -75,7 +77,7 @@ const FinancialChart = () => {
               onChange={() => setShowPs(!showPs)}
               className="form-checkbox"
             />
-            <span className="ml-2">P/S mutató</span>
+            <span className="ml-2">P/S Ratio</span>
           </label>
 
           <label className="inline-flex items-center cursor-pointer ml-4">
@@ -85,7 +87,7 @@ const FinancialChart = () => {
               onChange={() => setShowPe(!showPe)}
               className="form-checkbox"
             />
-            <span className="ml-2">P/E mutató</span>
+            <span className="ml-2">P/E Ratio</span>
           </label>
 
           <label className="inline-flex items-center cursor-pointer ml-4">
@@ -125,9 +127,10 @@ const FinancialChart = () => {
               onChange={() => setShowEv(!showEv)}
               className="form-checkbox"
             />
-            <span className="ml-2">Debt-to-Equity</span>
+            <span className="ml-2">EV/EBITDA</span>
           </label>
         </div>
+
         <ResponsiveContainer width="100%" height={400}>
           <LineChart data={investments}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -137,36 +140,32 @@ const FinancialChart = () => {
             <Legend />
 
             {showAmount && (
-              <Line name="Összeg (Ft)" dataKey="amount" stroke="#8884d8" />
+              <Line name="Amount ($)" dataKey="amount" stroke="#8884d8" />
             )}
-            {showPb && <Line name="P/B mutató" dataKey="pb" stroke="#82ca9d" />}
-            {showPs && <Line name="P/S mutató" dataKey="ps" stroke="#ffc658" />}
-            {showPe && <Line name="P/E mutató" dataKey="pe" stroke="#8884d8" />}
-            {showPeg && (
-              <Line name="PEG Ratio" dataKey="peg" stroke="#82ca9d" />
-            )}
+            {showPb && <Line name="P/B Ratio" dataKey="pb" stroke="#82ca9d" />}
+            {showPs && <Line name="P/S Ratio" dataKey="ps" stroke="#ffc658" />}
+            {showPe && <Line name="P/E Ratio" dataKey="pe" stroke="#8884d8" />}
+            {showPeg && <Line name="PEG Ratio" dataKey="peg" stroke="#82ca9d" />}
             {showDy && (
               <Line name="Dividend Yield" dataKey="dy" stroke="#ffc658" />
             )}
             {showDte && (
               <Line name="Debt-to-Equity" dataKey="dte" stroke="#8884d8" />
             )}
-            {showEv && <Line name="EV/EBITDA" dataKey="ev" stroke="#82ca9d" />}
+            {showEv && (
+              <Line name="EV/EBITDA" dataKey="ev" stroke="#82ca9d" />
+            )}
           </LineChart>
         </ResponsiveContainer>
+
         <div className="mt-6 p-4 bg-white rounded-xl shadow">
           <h4 className="text-lg font-semibold mb-2">
-            Használati útmutató a grafikonhoz
+            Chart Usage Guide
           </h4>
           <ul className="list-disc pl-4 text-gray-700">
-            <li>A grafikon interaktívan mutatja a befektetések változását.</li>
-            <li>
-              Használd a vonalat az egyes befektetések kockázatának gyors
-              áttekintéséhez.
-            </li>
-            <li>
-              A befektetéseket rendszeresen frissítsd az aktuális adatokkal.
-            </li>
+            <li>The chart interactively displays changes in your investments.</li>
+            <li>Use the lines for a quick overview of each investment's risk.</li>
+            <li>Make sure to regularly update your investments with current data.</li>
           </ul>
         </div>
       </div>

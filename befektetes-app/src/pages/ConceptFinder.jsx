@@ -15,13 +15,13 @@ const ConceptFinder = () => {
     <div className="p-4 bg-white shadow-lg rounded-lg">
       <input
         type="text"
-        placeholder="Fogalom keresése..."
+        placeholder="Search concept..."
         value={query} //  The input value is always the current `query`
         onChange={(event) => setQuery(event.target.value)} // We update the status as you type.
         className="w-full p-2 mb-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
       />
 
-      <h2 className="text-xl font-bold mb-3">Fogalmak</h2>
+      <h2 className="text-xl font-bold mb-3">Concepts</h2>
 
       <ul className="space-y-3">
         {termEntries
@@ -62,7 +62,7 @@ const ConceptFinder = () => {
         termEntries.filter(([key]) =>
           key.toLowerCase().includes(query.toLowerCase())
         ).length === 0 && (
-          <p className="text-gray-500">Nincs találat erre a kifejezésre.</p>
+          <p className="text-gray-500">No results found for this term.</p>
         )}
     </div>
   );
